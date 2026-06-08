@@ -289,6 +289,63 @@ Each section in Thai AND English (parallel). Doubles length.
 Adds Trilakshana lens chapter — arise/abide/cease applied to topic.
 For engineering-meets-Buddhist content (e.g., code-as-samsara guides).
 
+### `--narrative` (Volume 1 style — story / journal)
+Story-driven book. Timeline-as-arc. Personal voice. Quotes from peers.
+Audience: curious general reader + engineers wanting to feel the work.
+Format: chapters as time-of-day milestones (เช้า / สาย / เที่ยง / บ่าย / ค่ำ).
+Quotes attributed verbatim. Critical humility maintained at end.
+Example: "วันที่ Orz เห็นตัวเอง" (10 pages, 2026-06-08).
+
+### `--technical` (Volume 2 style — recipe / tutorial / course)
+Hands-on book that lets readers RECREATE the artifacts.
+Audience: engineer who wants to copy-paste-run the code.
+Format: chapters as **recipes**. Each recipe MUST have:
+
+```
+## Recipe N: <title>
+
+### Why
+[1 paragraph context — what problem this solves]
+
+### What you need
+- prereq 1 (with install command)
+- prereq 2
+- env variables
+
+### Code
+[FULL runnable code — no ellipsis, no "..." placeholders]
+
+### Run it
+```bash
+$ exact command
+expected output line 1
+expected output line 2
+```
+
+### Traps
+- trap 1 → how to detect → how to fix
+- trap 2 → ...
+
+### Variations
+- "if you want X instead of Y, change line N to ..."
+- "to extend, see ..."
+```
+
+No section can be "left as exercise to reader". The whole point of
+--technical is that someone with no prior context can RUN it.
+
+### `--paired-with <slug>` (volume series)
+Marks this book as a companion volume to another.
+- Cross-references both directions
+- Place files under `<slug>/vol1.md`, `<slug>/vol2.md`, etc.
+- PDF + images alongside each volume
+- Update README to list volumes in series
+
+Example pairing:
+- Volume 1 (`--narrative`): "the-day-orz-saw-itself" — story
+- Volume 2 (`--technical --paired-with the-day-orz-saw-itself`):
+  "orz-skill-cookbook" — recipes to recreate everything in Volume 1
+
 ## Connection to Orz character
 
 - **5 Principles**:
